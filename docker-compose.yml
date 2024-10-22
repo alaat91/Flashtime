@@ -1,0 +1,18 @@
+services:
+  frontend:
+    build:
+      context: ./client
+    ports:
+      - 8080:8080
+  backend:
+    build:
+      context: ./server
+    ports:
+      - 3005:3005
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: flashtime-user
+      MONGO_INITDB_ROOT_PASSWORD: flashtime-password12345
+
